@@ -1,0 +1,52 @@
+<div mat-dialog-title>
+    <h1>Meeting information</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline" class="context">
+                <mat-label>EnterMeetingTopic</mat-label>
+                <input matInput type="text" formControlName="EnterMeetingTopic">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="context">
+                <mat-label>NumberOfEmployee</mat-label>
+                <input matInput type="number" formControlName="NumberOfEmployee">
+              
+              </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="context">
+                <mat-label>EmailAddress</mat-label>
+                <input matInput type="email" formControlName="EmailAddress">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="context">
+                <mat-label>ChooseDate</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="ChooseDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="context">
+                <mat-label>MeetingTime</mat-label>
+                <input matInput type="time" formControlName="MeetingTime">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="context">
+                    <mat-label>shortDesc</mat-label>
+                    <mat-select formControlName="shortDesc">
+                        <mat-option *ngFor="let val of shortDesc" [value]="val">{{val}}
+                        </mat-option>
+                    </mat-select>
+                  </mat-form-field>  
+
+        </div>
+</div>
+<div mat-dialog-action class="action" >
+    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button color="primary" type="Submit">Save</button>
+</div>
+</form>

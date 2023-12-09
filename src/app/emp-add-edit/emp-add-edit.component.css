@@ -1,0 +1,15 @@
+.content{
+    padding-top: 10px;
+    
+}
+.row{
+    display: flex;
+    gap: 10px;
+}
+.context{
+    width: 50%;
+}
+.action{
+    padding: 2px 25px 20px;
+    
+}
